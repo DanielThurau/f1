@@ -13,7 +13,6 @@ function App() {
     <ChakraProvider>
       <Box minH="100vh" bg="gray.50">
         <Header activeTab={activeTab} setActiveTab={setActiveTab} />
-        <Text p={4} fontSize="xl" fontWeight="bold" color="blue.600">Hello World</Text>
         <Box p={4}>
           {activeTab === 0 && <DriverStandings drivers={drivers} />}
           {activeTab === 1 && <ConstructorStandings constructors={constructors} />}
