@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { ChakraProvider, Box, Text } from '@chakra-ui/react';
+import { ChakraProvider, Box } from '@chakra-ui/react';
 import Header from './components/Header';
 import DriverStandings from './components/DriverStandings';
 import ConstructorStandings from './components/ConstructorStandings';
 import SeasonTimeline from './components/SeasonTimeline';
-import { drivers, constructors, seasonResults } from './data/mockData';
+import { drivers, constructors, seasonResults } from './data/f1Data2025';
 
 function App() {
   const [activeTab, setActiveTab] = useState(0);

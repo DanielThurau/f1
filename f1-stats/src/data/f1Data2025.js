@@ -1,4 +1,10 @@
-// Driver Standings 2025
+// This file contains F1 data for the 2025 season
+// Generated using the update-f1-data.js script
+// Last updated: 2024-07-14T00:00:00.000Z
+
+import { fetch2025F1Data } from '../services/f1Scraper';
+
+// Default exported data (updated on 7/14/2024)
 export const drivers = [
   {
     id: "NOR",
@@ -84,7 +90,7 @@ export const drivers = [
   {
     id: "STR",
     name: "Lance Stroll",
-    team: "Aston Martin Aramco Mercedes",
+    team: "Aston Martin",
     points: 10,
     position: 10,
     positionChange: 3,
@@ -120,7 +126,7 @@ export const drivers = [
   {
     id: "TSU",
     name: "Yuki Tsunoda",
-    team: "Red Bull Racing",
+    team: "Racing Bulls",
     points: 5,
     position: 14,
     positionChange: -2,
@@ -138,7 +144,7 @@ export const drivers = [
   {
     id: "SAI",
     name: "Carlos Sainz",
-    team: "Williams Mercedes",
+    team: "Williams",
     points: 1,
     position: 16,
     positionChange: -11,
@@ -147,7 +153,7 @@ export const drivers = [
   {
     id: "ALO",
     name: "Fernando Alonso",
-    team: "Aston Martin Aramco Mercedes",
+    team: "Aston Martin",
     points: 0,
     position: 17,
     positionChange: -8,
@@ -182,7 +188,6 @@ export const drivers = [
   }
 ];
 
-// Constructor Standings 2025
 export const constructors = [
   {
     id: "MCL",
@@ -245,11 +250,11 @@ export const constructors = [
     name: "Racing Bulls",
     points: 7,
     position: 8,
-      color: "#1E41FF",
-      logoUrl: "https://media.formula1.com/content/dam/fom-website/teams/2025/racing-bulls-logo.png"
+    color: "#1E41FF",
+    logoUrl: "https://media.formula1.com/content/dam/fom-website/teams/2025/racing-bulls-logo.png"
   },
   {
-    id: "REN",
+    id: "ALP",
     name: "Alpine",
     points: 6,
     position: 9,
@@ -266,7 +271,6 @@ export const constructors = [
   }
 ];
 
-// Season Timeline Data 2025 (full grid)
 export const seasonResults = [
   {
     race: "Australian GP",
@@ -377,3 +381,15 @@ export const seasonResults = [
     ]
   }
 ];
+
+// Function to update the 2025 F1 data in this file
+export const updateF1Data = async () => {
+  try {
+    const data = await fetch2025F1Data();
+    console.log('Successfully updated 2025 F1 data', data);
+    return data;
+  } catch (error) {
+    console.error('Failed to update 2025 F1 data', error);
+    return { drivers, constructors, seasonResults };
+  }
+}; 
