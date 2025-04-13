@@ -1,4 +1,4 @@
-import { Box, Heading, Flex, Text, Image, Progress } from "@chakra-ui/react";
+import { Box, Heading, Flex, Text, Image, Progress } from '@chakra-ui/react';
 
 const ConstructorStandings = ({ constructors }) => {
   // Find maximum points for scaling the progress bars
@@ -9,13 +9,13 @@ const ConstructorStandings = ({ constructors }) => {
       <Heading as="h2" size="xl" mb={6} textAlign="center">
         Constructor Championship Standings
       </Heading>
-      
-      {constructors.map((constructor) => (
-        <Box 
-          key={constructor.id} 
-          mb={4} 
-          p={4} 
-          borderRadius="md" 
+
+      {constructors.map(constructor => (
+        <Box
+          key={constructor.id}
+          mb={4}
+          p={4}
+          borderRadius="md"
           boxShadow="md"
           borderLeft={`6px solid ${constructor.color}`}
         >
@@ -24,25 +24,28 @@ const ConstructorStandings = ({ constructors }) => {
               <Box fontSize="xl" fontWeight="bold" mr={4}>
                 {constructor.position}
               </Box>
-              <Image 
-                src={constructor.logoUrl} 
-                alt={constructor.name} 
-                height="40px" 
-                mr={3}
-              />
-              <Text fontWeight="bold" fontSize="lg">{constructor.name}</Text>
+              <Image src={constructor.logoUrl} alt={constructor.name} height="40px" mr={3} />
+              <Text fontWeight="bold" fontSize="lg">
+                {constructor.name}
+              </Text>
             </Flex>
-            <Text fontWeight="bold" fontSize="xl">{constructor.points} PTS</Text>
+            <Text fontWeight="bold" fontSize="xl">
+              {constructor.points} PTS
+            </Text>
           </Flex>
-          <Progress 
-            value={(constructor.points / maxPoints) * 100} 
-            size="md" 
-            colorScheme={constructor.color === "#FFFFFF" ? "gray" : undefined}
-            sx={constructor.color !== "#FFFFFF" ? {
-              '& > div': {
-                background: constructor.color
-              }
-            } : {}}
+          <Progress
+            value={(constructor.points / maxPoints) * 100}
+            size="md"
+            colorScheme={constructor.color === '#FFFFFF' ? 'gray' : undefined}
+            sx={
+              constructor.color !== '#FFFFFF'
+                ? {
+                    '& > div': {
+                      background: constructor.color,
+                    },
+                  }
+                : {}
+            }
           />
         </Box>
       ))}
@@ -50,4 +53,4 @@ const ConstructorStandings = ({ constructors }) => {
   );
 };
 
-export default ConstructorStandings; 
+export default ConstructorStandings;

@@ -1,0 +1,17 @@
+# Build outputs
+dist/
+build/
+
+# Dependencies
+node_modules/
+
+# Generated data files
+src/data/f1Data2025.js
+
+# Configuration files
+vite.config.js
+eslint.config.js
+
+# Logs
+logs/
+*.log 

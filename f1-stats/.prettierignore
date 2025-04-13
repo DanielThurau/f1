@@ -1,0 +1,26 @@
+# Build outputs
+dist/
+build/
+
+# Dependencies
+node_modules/
+
+# Generated files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Cache
+.cache/
+.eslintcache
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env*
+!.env.example
+
+# Generated data files
+src/data/f1Data2025.js 
