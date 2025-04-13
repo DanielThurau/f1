@@ -11,7 +11,7 @@
     "format": "prettier --write \"src/**/*.{js,jsx}\" \"scripts/**/*.js\"",
     "preview": "vite preview",
     "update-f1-data": "node scripts/update-f1-data.js",
-    "prepare": "husky install"
+    "prepare": "[ -n \"$CI\" ] && echo 'Skipping husky in CI' || husky install"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.2.4",
